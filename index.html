@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ID Telecom Partners | Private Capital · Telecom Infrastructure</title>
+  <meta name="description" content="ID Telecom Partners is a family-office backed private equity platform focused on telecommunications infrastructure, connectivity assets, and digital communications businesses across North America." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #09142a;
+      --navy2:  #0e1e3d;
+      --navy3:  #132347;
+      --gold:   #b8964a;
+      --gold2:  #d4af6a;
+      --cream:  #f2ede6;
+      --muted:  #8a9bb5;
+      --white:  #ffffff;
+      --border: rgba(184,150,74,0.18);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--navy);
+      color: var(--cream);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 6vw;
+      height: 72px;
+      background: rgba(9,20,42,0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--white);
+    }
+    .nav-logo span { color: var(--gold); }
+    nav ul { list-style: none; display: flex; gap: 2.4rem; }
+    nav ul li a {
+      text-decoration: none;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+    nav ul li a:hover { color: var(--gold2); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 140px 6vw 100px;
+      background:
+        linear-gradient(160deg, rgba(184,150,74,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 50%, rgba(19,35,71,0.9) 0%, transparent 70%),
+        var(--navy);
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: 0; right: 0; bottom: 0;
+      width: 55%;
+      background: url("data:image/svg+xml,%3Csvg width='600' height='800' viewBox='0 0 600 800' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='500' cy='200' r='320' stroke='%23b8964a' stroke-width='0.4' stroke-opacity='0.15'/%3E%3Ccircle cx='500' cy='200' r='220' stroke='%23b8964a' stroke-width='0.4' stroke-opacity='0.1'/%3E%3Ccircle cx='500' cy='200' r='130' stroke='%23b8964a' stroke-width='0.4' stroke-opacity='0.08'/%3E%3Cline x1='180' y1='0' x2='600' y2='800' stroke='%23b8964a' stroke-width='0.3' stroke-opacity='0.07'/%3E%3Cline x1='0' y1='300' x2='600' y2='500' stroke='%23b8964a' stroke-width='0.3' stroke-opacity='0.06'/%3E%3C/svg%3E") center / cover no-repeat;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.4rem;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.6rem, 5.5vw, 4.4rem);
+      font-weight: 500;
+      line-height: 1.15;
+      color: var(--white);
+      max-width: 680px;
+      margin-bottom: 1.8rem;
+    }
+    .hero h1 em { font-style: italic; color: var(--gold2); }
+    .hero p {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--muted);
+      max-width: 520px;
+      line-height: 1.75;
+      margin-bottom: 3rem;
+    }
+    .hero-cta {
+      display: flex; gap: 1.2rem; flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-block;
+      padding: 0.9rem 2.2rem;
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid var(--gold);
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-primary:hover { background: var(--gold2); border-color: var(--gold2); }
+    .btn-ghost {
+      display: inline-block;
+      padding: 0.9rem 2.2rem;
+      background: transparent;
+      color: var(--cream);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-ghost:hover { border-color: var(--gold); color: var(--gold2); }
+
+    /* ── STATS BAR ── */
+    .stats {
+      background: var(--navy2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 3rem 6vw;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 2rem;
+    }
+    .stat-item { text-align: center; }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+    .stat-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ── SECTION WRAPPER ── */
+    section { padding: 100px 6vw; }
+    .section-eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 1.2rem;
+      line-height: 1.2;
+    }
+    .section-sub {
+      color: var(--muted);
+      font-weight: 300;
+      max-width: 540px;
+      line-height: 1.75;
+      margin-bottom: 3.5rem;
+    }
+    .divider { width: 40px; height: 1px; background: var(--gold); margin: 1.4rem 0 2.2rem; }
+
+    /* ── ABOUT ── */
+    .about {
+      background: var(--navy);
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5vw;
+      align-items: center;
+    }
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 1.2rem;
+      font-weight: 300;
+      line-height: 1.8;
+    }
+    .about-text p strong { color: var(--cream); font-weight: 500; }
+    .about-pillars {
+      display: flex; flex-direction: column; gap: 1.4rem;
+    }
+    .pillar {
+      padding: 1.6rem;
+      border: 1px solid var(--border);
+      background: rgba(14,30,61,0.6);
+      transition: border-color 0.25s;
+    }
+    .pillar:hover { border-color: rgba(184,150,74,0.4); }
+    .pillar h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+    .pillar p { font-size: 0.88rem; color: var(--muted); line-height: 1.65; }
+
+    /* ── FOCUS AREAS ── */
+    .focus { background: var(--navy2); }
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .focus-card {
+      padding: 2.2rem;
+      border: 1px solid var(--border);
+      background: rgba(9,20,42,0.6);
+      transition: transform 0.25s, border-color 0.25s;
+    }
+    .focus-card:hover { transform: translateY(-4px); border-color: rgba(184,150,74,0.35); }
+    .focus-icon {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+    .focus-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      color: var(--white);
+      margin-bottom: 0.8rem;
+    }
+    .focus-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
+
+    /* ── INVESTMENT APPROACH ── */
+    .approach { background: var(--navy); }
+    .approach-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .approach-list {
+      list-style: none;
+      display: flex; flex-direction: column; gap: 1.6rem;
+    }
+    .approach-list li {
+      display: flex; gap: 1.2rem;
+      align-items: flex-start;
+    }
+    .approach-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--gold);
+      flex-shrink: 0;
+      line-height: 1;
+      padding-top: 0.1rem;
+    }
+    .approach-item h4 { color: var(--cream); font-size: 0.95rem; font-weight: 500; margin-bottom: 0.3rem; }
+    .approach-item p { color: var(--muted); font-size: 0.86rem; line-height: 1.65; }
+    .approach-quote {
+      border-left: 2px solid var(--gold);
+      padding: 1.5rem 1.8rem;
+      background: rgba(14,30,61,0.5);
+    }
+    .approach-quote blockquote {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      color: var(--cream);
+      font-style: italic;
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+    }
+    .approach-quote cite { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.08em; }
+
+    /* ── CONTACT ── */
+    .contact {
+      background: var(--navy3);
+      border-top: 1px solid var(--border);
+    }
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5vw;
+    }
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    input, textarea, select {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      background: rgba(9,20,42,0.6);
+      border: 1px solid var(--border);
+      color: var(--cream);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.88rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    input:focus, textarea:focus { border-color: rgba(184,150,74,0.5); }
+    input::placeholder, textarea::placeholder { color: var(--muted); }
+    textarea { height: 130px; resize: vertical; }
+    .contact-info { display: flex; flex-direction: column; gap: 2rem; }
+    .contact-block h4 {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+    .contact-block p, .contact-block a {
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+    .contact-block a:hover { color: var(--gold2); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: rgba(5,10,20,0.95);
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 6vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+    .footer-logo span { color: var(--gold); }
+    footer p { font-size: 0.75rem; color: rgba(138,155,181,0.5); }
+    .footer-disclaimer {
+      width: 100%;
+      font-size: 0.7rem;
+      color: rgba(138,155,181,0.4);
+      line-height: 1.6;
+      padding-top: 1.2rem;
+      border-top: 1px solid rgba(184,150,74,0.08);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav ul { display: none; }
+      .about-grid, .approach-cols, .contact-inner { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">ID Telecom <span>Partners</span></div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#focus">Focus</a></li>
+    <li><a href="#approach">Approach</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Private Capital · Telecom Infrastructure · Family Office</div>
+  <h1>Patient Capital for the <em>Connected</em> World</h1>
+  <p>ID Telecom Partners is a family office-backed private equity platform investing in telecommunications infrastructure, spectrum assets, and connectivity businesses across North America.</p>
+  <div class="hero-cta">
+    <a href="#contact" class="btn-primary">Discuss Opportunities</a>
+    <a href="#about" class="btn-ghost">Our Philosophy</a>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat-item">
+    <span class="stat-num">20+</span>
+    <span class="stat-label">Years of Industry Experience</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">$500M+</span>
+    <span class="stat-label">Assets Under Management</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">15+</span>
+    <span class="stat-label">Portfolio Companies</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">4</span>
+    <span class="stat-label">Focus Markets</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-text">
+      <div class="section-eyebrow">About the Firm</div>
+      <h2 class="section-title">Built on Decades of Telecom Expertise</h2>
+      <div class="divider"></div>
+      <p>ID Telecom Partners brings together <strong>private equity discipline and family office capital</strong> to invest in the telecommunications sector — a space defined by long asset lives, regulatory barriers to entry, and essential connectivity needs.</p>
+      <p>We operate with a long-duration capital base, allowing us to be <strong>patient owners of infrastructure assets</strong> rather than short-cycle fund managers. Our investment horizon aligns with the economic lives of the assets we acquire, not with a fund's expiration date.</p>
+      <p>Our team draws on decades of operational, regulatory, and capital markets experience across wireless, wireline, fiber, and spectrum — giving us conviction where others see complexity.</p>
+    </div>
+    <div class="about-pillars">
+      <div class="pillar">
+        <h4>Family Office Capital</h4>
+        <p>Permanent, patient capital from a single family office — no fund cycles, no LP pressure, no forced exits.</p>
+      </div>
+      <div class="pillar">
+        <h4>Operational Expertise</h4>
+        <p>We've built, operated, and sold telecom businesses. We bring hands-on knowledge, not just check-writing.</p>
+      </div>
+      <div class="pillar">
+        <h4>Regulatory Acumen</h4>
+        <p>Navigating FCC licensing, spectrum auctions, and state regulatory processes is a core competency — not an afterthought.</p>
+      </div>
+      <div class="pillar">
+        <h4>Network of Relationships</h4>
+        <p>Decades of relationships with carriers, tower companies, municipalities, and regulators accelerate our diligence and deal flow.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOCUS AREAS -->
+<section class="focus" id="focus">
+  <div class="section-eyebrow">Investment Focus</div>
+  <h2 class="section-title">Where We Invest</h2>
+  <p class="section-sub">We concentrate capital in four interconnected segments of the telecommunications ecosystem, each offering infrastructure-like returns with meaningful barriers to entry.</p>
+  <div class="focus-grid">
+    <div class="focus-card">
+      <div class="focus-icon">📡</div>
+      <h3>Wireless Infrastructure</h3>
+      <p>Tower companies, small cells, DAS networks, and supporting real estate integral to wireless carrier build-out and densification strategies.</p>
+    </div>
+    <div class="focus-card">
+      <div class="focus-icon">🌐</div>
+      <h3>Fiber Networks</h3>
+      <p>Long-haul, metro, and last-mile fiber assets serving enterprise, government, carrier, and residential markets across underserved geographies.</p>
+    </div>
+    <div class="focus-card">
+      <div class="focus-icon">📻</div>
+      <h3>Spectrum Assets</h3>
+      <p>Licensed spectrum holdings and spectrum-dependent businesses, including rural broadband operators and MVNO platforms.</p>
+    </div>
+    <div class="focus-card">
+      <div class="focus-icon">🏢</div>
+      <h3>Connectivity Businesses</h3>
+      <p>Competitive local exchange carriers (CLECs), managed service providers, and value-added resellers with defensible market positions.</p>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section class="approach" id="approach">
+  <div class="approach-cols">
+    <div>
+      <div class="section-eyebrow">Investment Approach</div>
+      <h2 class="section-title">How We Create Value</h2>
+      <div class="divider"></div>
+      <ul class="approach-list">
+        <li>
+          <span class="approach-num">01</span>
+          <div class="approach-item">
+            <h4>Proprietary Deal Flow</h4>
+            <p>Our industry relationships surface opportunities before they reach auction. We prioritize negotiated transactions over competitive processes.</p>
+          </div>
+        </li>
+        <li>
+          <span class="approach-num">02</span>
+          <div class="approach-item">
+            <h4>Operational Value Creation</h4>
+            <p>We don't rely solely on financial engineering. Revenue growth, cost structure, and operational improvement are the primary levers we pull.</p>
+          </div>
+        </li>
+        <li>
+          <span class="approach-num">03</span>
+          <div class="approach-item">
+            <h4>Partnership Model</h4>
+            <p>We invest alongside management teams who have meaningful equity stakes. Alignment drives outcomes.</p>
+          </div>
+        </li>
+        <li>
+          <span class="approach-num">04</span>
+          <div class="approach-item">
+            <h4>Flexible Capital Solutions</h4>
+            <p>From minority growth equity to full control buyouts, we structure capital to match what the business and founders need.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="approach-quote">
+      <blockquote>"The telecom sector rewards those who understand its regulatory complexity, its infrastructure permanence, and its essential role in modern life. We've spent careers building that understanding."</blockquote>
+      <cite>— ID Telecom Partners, Investment Philosophy</cite>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div>
+      <div class="section-eyebrow">Get in Touch</div>
+      <h2 class="section-title">Discuss an Opportunity</h2>
+      <div class="divider"></div>
+      <p class="section-sub">We're selective about the opportunities we pursue and the relationships we build. If you're working on something in the telecom infrastructure space, we'd like to hear from you.</p>
+      <div class="contact-info">
+        <div class="contact-block">
+          <h4>General Inquiries</h4>
+          <a href="mailto:info@idtelecompartners.com">info@idtelecompartners.com</a>
+        </div>
+        <div class="contact-block">
+          <h4>Deal Submissions</h4>
+          <a href="mailto:deals@idtelecompartners.com">deals@idtelecompartners.com</a>
+        </div>
+        <div class="contact-block">
+          <h4>Headquarters</h4>
+          <p>Miami, Florida</p>
+        </div>
+      </div>
+    </div>
+    <form class="contact-form" onsubmit="return false;">
+      <div class="form-row">
+        <input type="text" placeholder="First Name" />
+        <input type="text" placeholder="Last Name" />
+      </div>
+      <input type="email" placeholder="Email Address" />
+      <input type="text" placeholder="Organization" />
+      <select style="color: #8a9bb5;">
+        <option value="" disabled selected>Nature of Inquiry</option>
+        <option>Investment Opportunity</option>
+        <option>Capital Partnership</option>
+        <option>Strategic Discussion</option>
+        <option>Other</option>
+      </select>
+      <textarea placeholder="Brief description of your inquiry…"></textarea>
+      <button type="submit" class="btn-primary" style="cursor:pointer; width:fit-content;">Submit Inquiry</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">ID Telecom <span>Partners</span></div>
+  <p>© 2026 ID Telecom Partners. All rights reserved.</p>
+  <p class="footer-disclaimer">
+    This website is for informational purposes only and does not constitute an offer to sell, or a solicitation of an offer to buy, any security or investment product. Past performance is not indicative of future results. ID Telecom Partners is a private investment firm and is not registered as an investment adviser with any state or federal authority.
+  </p>
+</footer>
+
+</body>
+</html>
