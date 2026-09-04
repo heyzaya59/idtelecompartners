@@ -528,12 +528,8 @@
       <p class="section-sub">We're selective about the opportunities we pursue and the relationships we build. If you're building something exceptional and looking for a capital partner aligned with your long-term vision, we'd like to hear from you.</p>
       <div class="contact-info">
         <div class="contact-block">
-          <h4>General Inquiries</h4>
-          <a href="mailto:info@idtelecompartners.com">info@idtelecompartners.com</a>
-        </div>
-        <div class="contact-block">
-          <h4>Deal Submissions</h4>
-          <a href="mailto:deals@idtelecompartners.com">deals@idtelecompartners.com</a>
+          <h4>Inquiries &amp; Deal Submissions</h4>
+          <a href="mailto:aly@idtelecompartners.com">aly@idtelecompartners.com</a>
         </div>
         <div class="contact-block">
           <h4>Headquarters</h4>
@@ -541,7 +537,7 @@
         </div>
       </div>
     </div>
-    <form class="contact-form" onsubmit="return false;">
+    <form class="contact-form" id="inquiryForm">
       <div class="form-row">
         <input type="text" placeholder="First Name" />
         <input type="text" placeholder="Last Name" />
@@ -570,5 +566,34 @@
   </p>
 </footer>
 
+<script>
+// The form has no backend (static GitHub Pages host), so compose a prefilled
+// email to aly@ rather than silently discarding the submission.
+document.getElementById('inquiryForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var f = e.target;
+  var v = function (sel) { var el = f.querySelector(sel); return el ? el.value.trim() : ''; };
+  var first = f.querySelectorAll('input[type=text]')[0].value.trim();
+  var last  = f.querySelectorAll('input[type=text]')[1].value.trim();
+  var email = v('input[type=email]');
+  var org   = f.querySelectorAll('input[type=text]')[2].value.trim();
+  var nature = v('select');
+  var msg   = v('textarea');
+
+  if (!first || !email || !msg) {
+    alert('Please add your name, email, and a brief description.');
+    return;
+  }
+  var subject = 'Website Inquiry' + (nature ? ' - ' + nature : '') + (org ? ' - ' + org : '');
+  var body = 'Name: ' + first + ' ' + last +
+             '\nEmail: ' + email +
+             '\nOrganization: ' + (org || '-') +
+             '\nNature of Inquiry: ' + (nature || '-') +
+             '\n\n' + msg;
+  window.location.href = 'mailto:aly@idtelecompartners.com'
+    + '?subject=' + encodeURIComponent(subject)
+    + '&body=' + encodeURIComponent(body);
+});
+</script>
 </body>
 </html>
